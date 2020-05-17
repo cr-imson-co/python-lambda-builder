@@ -25,7 +25,7 @@ RUN set -x \
 # also install pylint
 COPY ./requirements.txt /tmp/requirements.txt
 RUN set +x \
-  && pip install --no-cache -r /tmp/requirements.txt
+  && pip install --no-cache --progress-bar off -r /tmp/requirements.txt
 
 COPY --from=aws-cli-installer /usr/local/aws-cli /usr/local/aws-cli
 COPY --from=aws-cli-installer /aws-cli-bin/ /usr/local/bin/
