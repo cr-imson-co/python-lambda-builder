@@ -28,7 +28,7 @@ pipeline {
   environment {
     CI = 'true'
     PYTHON_VERSION = '3.8'
-    AWS_CLI_VERSION = '2.0.6'
+    AWS_CLI_VERSION = '2.0.24'
   }
   stages {
     stage('Build image') {
