@@ -36,7 +36,7 @@ pipeline {
         updateGitlabCommitStatus name: 'jenkins', state: 'running'
         script {
           withDockerRegistry(credentialsId: 'e22deec5-510b-4fbe-8916-a89e837d1b8d', url: 'https://docker.cr.imson.co/v2/') {
-            docker.build("docker.cr.imson.co/python-lambda-layer-builder:${env.PYTHON_VERSION}", "--build-arg PYTHON_VERSION=${env.PYTHON_VERSION} --build-arg AWS_CLI_VERSION=${env.AWS_CLI_VERSION} .").push()
+            docker.build("docker.cr.imson.co/python-lambda-builder:${env.PYTHON_VERSION}", "--build-arg PYTHON_VERSION=${env.PYTHON_VERSION} --build-arg AWS_CLI_VERSION=${env.AWS_CLI_VERSION} .").push()
           }
         }
       }
